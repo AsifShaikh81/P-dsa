@@ -20,7 +20,11 @@ var characterReplacement = function(s, k) {
      let winSize = high - low + 1 // get the curr size of window
      maxFreq = Math.max(maxFreq , map.get(s[high])) // store the max freq
       
-
+        /* 
+        👉 Agar required changes k se zyada hai, toh:
+        ❌ allowed nahi hai
+        👉 Isliye window shrink karte hain
+        */
      while(winSize - maxFreq > k){
         map.set(s[low], map.get(s[low]) -1 )
         low ++
